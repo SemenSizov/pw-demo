@@ -15,6 +15,11 @@ pipeline {
         steps {
           bat 'npm test'
         }
+        post {
+          always {
+            arhiveArtifacts(artifacts: 'playwright-report', allowEmptyArchive: true)
+          }
+        }
       }
   }
 }
