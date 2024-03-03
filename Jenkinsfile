@@ -17,7 +17,7 @@ pipeline {
         }
         post {
           always {
-            arhiveArtifacts(artifacts: 'playwright-report', allowEmptyArchive: true)
+            archiveArtifacts(artifacts: '**/playwright-report/**', allowEmptyArchive: true)
           }
         }
       }
