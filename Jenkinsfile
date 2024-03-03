@@ -3,14 +3,14 @@ pipeline {
   stages {
       stage('Install dependencies') {
          steps {
-          withNPM(npmrcConfig: 'd13fbbfd-bd46-49ab-bf86-08ac26acf679') {
+          withNPM(npmrcConfig: 'bfde068f-3bff-4c4b-a7c4-8343cbcd6f65') {
             sh 'npm ci'
           }
         }
       }
       stage('Run tests'){
         steps {
-        withNPM(npmrcConfig: 'd13fbbfd-bd46-49ab-bf86-08ac26acf679') {
+        withNPM(npmrcConfig: 'bfde068f-3bff-4c4b-a7c4-8343cbcd6f65') {
 
           sh 'npm test'
         }
