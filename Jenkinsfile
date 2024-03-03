@@ -3,14 +3,14 @@ pipeline {
   stages {
       stage('Install dependencies') {
          steps {
-          withNPM() {
+          withNPM(npmrcConfig: 'MyNpmrcConfig') {
             sh 'npm ci'
           }
         }
       }
       stage('Run tests'){
         steps {
-        withNPM() {
+        withNPM(npmrcConfig: 'MyNpmrcConfig') {
 
           sh 'npm test'
         }
