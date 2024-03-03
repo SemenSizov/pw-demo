@@ -11,4 +11,5 @@ pipeline {
           sh 'npx playwright test'
         }
       }
+  }
 }
