@@ -3,12 +3,12 @@ pipeline {
   stages {
       stage('Install dependencies') {
          steps {
-            sh 'npm ci'
+            sh '/usr/bin/npm ci'
           }
         }
       stage('Run tests'){
         steps {
-          sh 'npx playwright test'
+          sh '/usr/bin/npm test'
         }
       }
   }
