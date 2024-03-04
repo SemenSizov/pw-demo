@@ -1,20 +1,25 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Install dependencies') {
             steps {
-                echo 'Building..'
+                bat 'npm ci'
             }
         }
-        stage('Test') {
+        stage('Install Playwright') {
             steps {
-                echo 'Testing..'
+                bat 'npx playwright install --with-deps'
             }
         }
-        stage('Deploy') {
+        stage('Run Tests') {
             steps {
-                echo 'Deploying....'
+                echo 'npm test'
             }
         }
+        // stage('Deploy') {
+        //     steps {
+        //         echo 'Deploying....'
+        //     }
+        // }
     }
 }
